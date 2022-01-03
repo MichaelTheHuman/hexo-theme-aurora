@@ -19,6 +19,7 @@ function postMapper(post, configs) {
     cover: post.cover || fetchCovers(post.content),
     content: post.content,
     feature: post.feature,
+    hidden: post.hidden,
     pinned: post.pinned,
     text: truncateHTML(post.content, post.preview || 140),
     link: post.link,
