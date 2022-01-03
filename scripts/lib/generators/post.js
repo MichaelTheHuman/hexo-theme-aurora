@@ -36,7 +36,6 @@ class PostGenerator {
     // this.reorderFeaturePosts()
 
     this.data.data.forEach((post, index) => {
-      if (this.isHidden)
       let current = postMapper(post, this.configs)
       current.prev_post = prevPost
       current.next_post = {}
