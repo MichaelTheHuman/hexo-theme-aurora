@@ -97,7 +97,8 @@ function postListMapper(post, configs) {
     tags: post.tags,
     author: post.author,
     feature: post.feature,
-    pinned: post.pinned
+    pinned: post.pinned,
+    hidden: post.hidden
   }
 }
 

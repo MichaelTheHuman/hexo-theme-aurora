@@ -16,6 +16,7 @@ class PostGenerator {
     this.configs = configs
     this.authors = this.configs.theme_config.authors || {}
     this.isFeature = this.configs.theme_config.theme.feature
+    this.isHidden = this.configs.theme_config.theme.hidden // An idea for later :)
     this.transform()
   }
 
@@ -35,6 +36,7 @@ class PostGenerator {
     // this.reorderFeaturePosts()
 
     this.data.data.forEach((post, index) => {
+      if (this.isHidden)
       let current = postMapper(post, this.configs)
       current.prev_post = prevPost
       current.next_post = {}
@@ -225,7 +227,7 @@ class PostGenerator {
           total: length,
           pageSize: pageSize,
           pageCount: pageCount,
-          data: postData.slice(i, i + pageSize)
+          data: postData.filter(p => p.hidden !== true).slice(i, i + pageSize)
         })
       })
     }
