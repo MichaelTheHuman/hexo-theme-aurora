@@ -78,7 +78,7 @@
       <div>
         <Sidebar>
           <Profile :author="mainAuthor" />
-          <RecentComment />
+          <!-- <RecentComment /> -->
           <TagBox />
         </Sidebar>
       </div>
