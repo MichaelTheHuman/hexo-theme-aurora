@@ -37,7 +37,13 @@ class PostGenerator {
     // this.reorderFeaturePosts()
 
     let dataWithoutHidden = this.data.data.filter(post => post.hidden !== true)
-    this.hiddenPosts = this.data.data.filter(post => post.hidden === true)
+    let hiddenPosts = this.data.data.filter(post => post.hidden === true)
+    
+    hiddenPosts.forEach((post, index) => {
+      let current = postMapper(post, this.configs)
+      this.fillAuthorPost(current)
+      this.hiddenPosts.push(current)
+    })
 
     dataWithoutHidden.forEach((post, index) => {
       let current = postMapper(post, this.configs)
