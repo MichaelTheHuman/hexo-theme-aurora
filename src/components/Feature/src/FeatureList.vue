@@ -1,6 +1,6 @@
 <template>
-  <div class="inverted-main-grid py-8 gap-8 box-border">
-    <div
+  <div class="py-8 gap-8 box-border"> <!-- inverted-main-grid -->
+    <!-- <div
       class="
         relative
         overflow-hidden
@@ -39,7 +39,7 @@
         class="absolute top-0 w-full h-full z-0"
         :style="gradientBackground"
       />
-    </div>
+    </div> -->
 
     <ul class="grid lg:grid-cols-2 gap-8">
       <template v-if="featurePosts.length > 0">

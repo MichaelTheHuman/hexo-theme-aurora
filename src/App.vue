@@ -190,7 +190,7 @@ export default defineComponent({
         return {
           backgroundImage: `url(${
             commonStore.headerImage
-          }), url(${require('@/assets/default-cover.jpg')})`,
+          }), url(${require('@/assets/dark-default-cover.jpg')})`,
           opacity: commonStore.headerImage !== '' ? 1 : 0
         }
       }),

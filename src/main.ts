@@ -25,8 +25,8 @@ const app = createApp(App)
   .use(i18n)
   .use(VueClickAway)
   .use(lazyPlugin, {
-    loading: require('@/assets/default-cover.jpg'),
-    error: require('@/assets/default-cover.jpg')
+    loading: require('@/assets/dark-default-cover.jpg'),
+    error: require('@/assets/dark-default-cover.jpg')
   })
 
 registerSvgIcon(app)

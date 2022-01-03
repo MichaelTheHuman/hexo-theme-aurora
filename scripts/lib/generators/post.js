@@ -136,9 +136,10 @@ class PostGenerator {
     })
 
     // Filter out all the pull out posts
-    data = data.filter((value, index) => {
-      return fillOutIndexes.indexOf(index) === -1
-    })
+    // Don't filter out features
+    // data = data.filter((value, index) => {
+    //   return fillOutIndexes.indexOf(index) === -1
+    // })
 
     // Reorder all the feature / pinned post
     featureData.forEach(value => {

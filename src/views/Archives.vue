@@ -89,7 +89,7 @@ export default defineComponent({
         pagination.value.pageTotal = data.total
         archives.value = data.data
       })
-      commonStore.setHeaderImage(`${require('@/assets/default-cover.jpg')}`)
+      commonStore.setHeaderImage(`${require('@/assets/dark-default-cover.jpg')}`)
     }
 
     const pageChangeHanlder = (page: number) => {

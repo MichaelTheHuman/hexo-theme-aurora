@@ -15,7 +15,7 @@
     <div class="feature-article">
       <div class="feature-thumbnail">
         <img v-if="post.cover" class="ob-hz-thumbnail" v-lazy="post.cover" />
-        <img v-else class="ob-hz-thumbnail" src="@/assets/default-cover.jpg" />
+        <img v-else class="ob-hz-thumbnail" src="@/assets/dark-default-cover.jpg" />
         <span class="thumbnail-screen" :style="bannerHoverGradient" />
       </div>
       <div class="feature-content">

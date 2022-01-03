@@ -48,7 +48,7 @@ export default defineComponent({
 
     const fetchData = async () => {
       tagStore.fetchAllTags()
-      commonStore.setHeaderImage(`${require('@/assets/default-cover.jpg')}`)
+      commonStore.setHeaderImage(`${require('@/assets/dark-default-cover.jpg')}`)
     }
 
     onBeforeMount(fetchData)

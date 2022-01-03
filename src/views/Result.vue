@@ -38,7 +38,7 @@
         <Sidebar>
           <CategoryBox />
           <TagBox />
-          <RecentComment />
+          <!-- <RecentComment /> -->
         </Sidebar>
       </div>
     </div>
