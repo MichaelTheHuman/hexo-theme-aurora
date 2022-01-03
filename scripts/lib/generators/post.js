@@ -32,7 +32,7 @@ class PostGenerator {
 
     // Used when feature posts is not enough
     this.sortByDate()
-    this.reorderFeaturePosts()
+    // this.reorderFeaturePosts()
 
     this.data.data.forEach((post, index) => {
       let current = postMapper(post, this.configs)
