@@ -13,6 +13,7 @@ class PostGenerator {
 
   constructor(posts, configs) {
     this.data = posts
+    this.hiddenPosts = []
     this.configs = configs
     this.authors = this.configs.theme_config.authors || {}
     this.isFeature = this.configs.theme_config.theme.feature
@@ -35,7 +36,10 @@ class PostGenerator {
     this.sortByDate()
     // this.reorderFeaturePosts()
 
-    this.data.data.forEach((post, index) => {
+    let dataWithoutHidden = this.data.data.filter(post => post.hidden !== true)
+    this.hiddenPosts = this.data.data.filter(post => post.hidden === true)
+
+    dataWithoutHidden.forEach((post, index) => {
       let current = postMapper(post, this.configs)
       current.prev_post = prevPost
       current.next_post = {}
@@ -226,7 +230,7 @@ class PostGenerator {
           total: length,
           pageSize: pageSize,
           pageCount: pageCount,
-          data: postData.filter(p => p.hidden !== true).slice(i, i + pageSize)
+          data: postData.slice(i, i + pageSize)
         })
       })
     }
@@ -241,7 +245,7 @@ class PostGenerator {
    */
   addArticles(data) {
     if (this.count <= 0) return data
-    const postData = this.data
+    const postData = this.data.concat(this.hiddenPosts)
     data = data.concat(
       postData.map(function (post) {
         const path = 'api/articles/' + post.slug + '.json'
